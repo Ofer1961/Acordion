@@ -1,0 +1,177 @@
+<html>
+	<head>
+		<title>Acordion</title>
+		
+		<style>
+			section{
+				border: 2px solid blue;
+			}
+			
+			.showInfo{
+				width: 200px;
+			}
+			
+			.box{
+				width: 200px;
+			}
+		</style>
+		
+		<script
+			src="http://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous">
+		</script>
+		
+		<script>
+			/* "$(function(){" == "jQuery(function(){" */
+			
+			$(function(){ //Like main() in C
+				// All your code is here
+				var butt = [false, false, false, false];
+				$("div").toggle();
+				$("h1").toggle();
+			
+				function handleDownEvent(){ // a new function that handles click.
+					/*alert("h1 clicked");*/
+					$("h1").css("color" , "green");// sets the text color of h1 header.				
+				}
+				function handleUpEvent(){ // a new function that handles click.
+					/*alert("h1 clicked");*/
+					$("h1").css("color" , "red");// sets the text color of h1 header.				
+				}
+			
+				
+				$("h1").css("color" , "red");// sets the text color of h1 header.
+				$("h2").css("color" , "blue");// sets the text color of h1 header.
+				
+				$("h1").on("mousedown", handleDownEvent); // works when you click mouse button on h1
+				$("h1").on("mouseup", handleUpEvent); // works when you release mouse button on h1
+				
+
+				$("#but001").on("click", function(){// reacts when you click on an h1 header.
+					if (butt[0] === false){
+						$("div").hide();
+						$(this).next().toggle();
+						butt[0] = true;
+					}
+					else{
+						butt[0] = false;
+						butt[1] = false;
+						butt[2] = false;
+						butt[3] = false;
+						$("div").hide();
+					}					
+				});
+				$("#but002").on("click", function(){// reacts when you click on an h1 header.
+					if (butt[1] === false){
+						$("div").hide();
+						$(this).next().toggle();
+						butt[1] = true;
+					}
+					else{
+						butt[0] = false;
+						butt[1] = false;
+						butt[2] = false;
+						butt[3] = false;
+						$("div").hide();
+					}					
+				});
+				$("#but003").on("click", function(){// reacts when you click on an h1 header.
+					if (butt[2] === false){
+						$("div").hide();
+						$(this).next().toggle();
+						butt[2] = true;
+					}
+					else{
+						butt[0] = false;
+						butt[1] = false;
+						butt[2] = false;
+						butt[3] = false;
+						$("div").hide();
+					}					
+				});
+				$("#but004").on("click", function(){// reacts when you click on an h1 header.
+					if (butt[3] === false){
+						$("div").hide();
+						$(this).next().toggle();
+						butt[3] = true;
+					}
+					else{
+						butt[0] = false;
+						butt[1] = false;
+						butt[2] = false;
+						butt[3] = false;
+						$("div").hide();
+					}					
+				});
+			})
+					</script>
+	
+	</head>
+	
+	<body>		
+		<section>
+			<button id="but001" class="showInfo"> <!-- defining a button -->
+				Toggle more info 1
+			</button >
+			<div class="box">
+				<p> 
+					1 askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>				
+				</p>
+			</div>
+		</section>
+		
+		<section>
+			<button id="but002" class="showInfo"> <!-- defining a button -->
+				Toggle more info 2
+			</button>
+			<div class="box">
+				<p> 
+					2 askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>				
+				</p>
+			</div>
+		</section>
+		
+		<section>
+			<button id="but003" class="showInfo"> <!-- defining a button -->
+				Toggle more info 3
+			</button>
+			<div class="box">
+				<p> 
+					3 askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>				
+				</p>
+			</div>
+		</section>
+		
+		<section>
+			<button id="but004" class="showInfo"> <!-- defining a button -->
+				Toggle more info 4
+			</button>
+			<div class="box">
+				<p> 
+					4 askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>
+					askj sakjd; akasdj hd lkdjflks <br>				
+				</p>
+			</div>
+		</section>
+		
+		<h1>Use of Functions</h1>
+		<h1>Use of Functions 2 </h1>
+		
+		<h2 id='star'>Star</h2>
+		<h2 id='star'>Star2</h2>
+		
+		
+	</body>
+</html>
